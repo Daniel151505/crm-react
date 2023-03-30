@@ -1,7 +1,5 @@
 function NuevoCliente() {
-  return (
-    <div>NuevoCliente</div>
-  )
+  return <div>NuevoCliente</div>;
 }
 
-export default NuevoCliente
+export default NuevoCliente;
