@@ -1,6 +1,7 @@
-import { useNavigate, Form, useActionData } from "react-router-dom";
+import { useNavigate, Form, useActionData, redirect } from "react-router-dom";
 import Formulario from "../components/Formulario";
 import Error from "../components/Error";
+import { agregarCliente } from "../data/clientes";
 
 export async function action({ request }) {
   const formData = await request.formData();
@@ -24,6 +25,9 @@ export async function action({ request }) {
   if (Object.keys(errores).length) {
     return errores;
   }
+
+  await agregarCliente(datos);
+  return redirect("/");
 }
 
 function NuevoCliente() {
@@ -49,7 +53,7 @@ function NuevoCliente() {
       <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-5">
         {errores?.length &&
           errores.map((error, i) => <Error key={i}>{error}</Error>)}
-        <Form method="post" novalidate>
+        <Form method="post" noValidate>
           <Formulario />
           <input
             type="submit"
