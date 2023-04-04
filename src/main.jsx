@@ -7,6 +7,7 @@ import NuevoCliente, {
   action as nuevoClienteAction,
 } from "./pages/NuevoCliente";
 import Index, { loader as clientesLoader } from "./pages/Index";
+import ErrorPage from "./components/Errorpage";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Index />,
         loader: clientesLoader,
+        errorElement: <ErrorPage></ErrorPage>
       },
       {
         path: "/clientes/nuevo",
