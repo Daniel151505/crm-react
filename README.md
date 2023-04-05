@@ -1,7 +1,6 @@
 # crm-react 
 
-package --> https://www.npmjs.com/package/json-server 
 Execute this command in the console --> npm install json-server
 
-Run the project
+Run the project with this command in the console --> 
 npm run dev
